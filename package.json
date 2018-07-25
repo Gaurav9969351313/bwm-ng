@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -24,7 +24,9 @@
     "bootstrap": "^4.1.0",
     "core-js": "^2.5.7",
     "express": "^4.16.3",
+    "font-awesome": "^4.7.0",
     "mongoose": "^5.2.5",
+    "ngx-pipes": "^2.3.5",
     "rxjs": "^5.5.11",
     "zone.js": "^0.8.19"
   },
@@ -38,7 +40,7 @@
     "codelyzer": "^4.4.2",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
-    "karma": "^2.0.4",
+    "karma": "^2.0.5",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "^1.4.3",
     "karma-jasmine": "^1.1.2",
