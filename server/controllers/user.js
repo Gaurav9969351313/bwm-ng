@@ -98,8 +98,8 @@ function parseToken(token){
   return jwt.verify(token.split(" ")[1], config.SECRET);
 }
 
-function invalidResponse(res, title, details){
-  return res.status(422).send({ errors: [{title, details}]});
+function invalidResponse(res, title, detail){
+  return res.status(422).send({ errors: [{title, detail}]});
 }
 
 function normalizeResponse(res, err){
@@ -107,5 +107,5 @@ function normalizeResponse(res, err){
 }
 
 function notAuthorized(res){
-  return res.status(401).send({errors: [{title: "Not authorized!", details: "You must login to access!"}]});
+  return res.status(401).send({errors: [{title: "Not authorized!", detail: "You must login to access!"}]});
 }
