@@ -71,7 +71,7 @@ export class RentalDetailBookingComponent implements OnInit {
   }
 
   private addNewBookedOutDates(bookingData: any){
-    const dateRange = this.helper.getBookingRangeOfDates(bookingData.startAt, bookingData.endAt)
+    const dateRange = this.helper.getBookingRangeOfDates(bookingData.startAt, bookingData.endAt);
     this.bookedOutDates.push(...dateRange);
   }
 

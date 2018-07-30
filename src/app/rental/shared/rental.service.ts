@@ -10,7 +10,7 @@ export class RentalService{
 
 
   public getRentalById(rentalId: string): Observable<any>{
-    return this.http.get("/api/v1/rentals/" + rentalId);
+    return this.http.get(`/api/v1/rentals/${rentalId}`);
   }
 
   public getRentals(): Observable<any>{
@@ -23,5 +23,13 @@ export class RentalService{
 
   public createRental(rental: Rental){
     return this.http.post("/api/v1/rentals", rental);
+  }
+
+  public getUserRentals(): Observable<any>{
+    return this.http.get("/api/v1/rentals/manage");
+  }
+
+  public deleteRental(rentalId: string): Observable<any>{
+    return this.http.delete(`/api/v1/rentals/${rentalId}`);
   }
 }
