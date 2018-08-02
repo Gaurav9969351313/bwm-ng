@@ -36,4 +36,12 @@ export class RentalCreateComponent implements OnInit {
         this.errors = errorResponse.error.errors;
       });
   }
+
+  handleImageSuccess(imageUrl: string){
+    this.newRental.image = imageUrl;
+  }
+
+  handleImageError(){
+    this.newRental.image = "";
+  }
 }
