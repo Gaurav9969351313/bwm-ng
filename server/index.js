@@ -6,7 +6,8 @@ const express = require("express"),
 
 const rentalRoutes = require("./routes/rentals"),
       userRoutes = require("./routes/users"),
-      bookingRoutes = require("./routes/bookings");
+      bookingRoutes = require("./routes/bookings"),
+      imageUploadRoutes = require("./routes/image-upload");
 
 mongoose.connect(config.DB_URI, { useNewUrlParser: true }).then(() => {
   const fakeDb = new FakeDb();
@@ -20,9 +21,10 @@ app.use(bodyParser.json());
 app.use("/api/v1/rentals", rentalRoutes);
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/bookings", bookingRoutes);
+app.use("/api/v1", imageUploadRoutes);
 
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, function(){
-  console.log("Dee Helee");
+  console.log("App is running!");
 });
