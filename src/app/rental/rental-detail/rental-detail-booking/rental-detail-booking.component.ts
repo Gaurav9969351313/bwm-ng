@@ -1,12 +1,12 @@
-import {Component, Input, OnInit, ViewChild, ViewContainerRef, ViewEncapsulation } from '@angular/core';
+import {Component, Input, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {Booking} from "../../../booking/shared/booking.model";
 import {Rental} from "../../shared/rental.model";
-import {ToastsManager} from 'ng2-toastr/ng2-toastr';
+import {ToastrService} from 'ngx-toastr';
 import {DaterangePickerComponent} from "ng2-daterangepicker";
 
 import {HelperService} from "../../../common/service/helper.service";
 import {BookingService} from "../../../booking/shared/booking.service";
-import { AuthService } from "../../../auth/shared/auth.service";
+import {AuthService} from "../../../auth/shared/auth.service";
 
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
@@ -44,10 +44,8 @@ export class RentalDetailBookingComponent implements OnInit {
   constructor(private helper: HelperService,
               private modalService: NgbModal,
               private bookingService: BookingService,
-              private toastr: ToastsManager,
-              private vcr: ViewContainerRef,
+              private toastr: ToastrService,
               public auth: AuthService) {
-    this.toastr.setRootViewContainerRef(vcr);
   }
 
   ngOnInit() {
